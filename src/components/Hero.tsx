@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Mail, Phone } from "lucide-react";
-import heroImage from "@/assets/hero-bg.jpg";
+import { ArrowDown, Mail, Phone, Instagram, Linkedin, Github } from "lucide-react";
+import profileImage from "@/assets/profile-photo.jpg";
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -9,68 +9,96 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Professional background" 
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/95" />
+    <section className="relative min-h-screen bg-gradient-hero overflow-hidden pt-16">
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {/* Grid pattern */}
+        <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
+        
+        {/* Glowing orb */}
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-primary opacity-20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-blue-500 opacity-10 rounded-full blur-2xl"></div>
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-          James Eduard Sajol
-        </h1>
-        
-        <div className="text-xl md:text-2xl text-muted-foreground mb-4 font-medium">
-          AI Automation Specialist
-        </div>
-        
-        <p className="text-lg md:text-xl text-foreground/80 mb-8 max-w-2xl mx-auto leading-relaxed">
-          Transforming business operations through intelligent workflow automation, 
-          AI-powered agents, and seamless system integrations.
-        </p>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-8rem)]">
+          {/* Left Content */}
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <div className="text-primary text-lg font-medium tracking-wider">JAMES SAJOL</div>
+              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+                HAY! I'M <span className="text-primary">JAMES</span>
+                <br />
+                I'M A <span className="bg-gradient-primary bg-clip-text text-transparent">AI AUTOMATION</span>
+              </h1>
+              <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
+                Transforming business operations through intelligent workflow automation, 
+                AI-powered agents, and seamless system integrations.
+              </p>
+            </div>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <Button 
-            size="lg" 
-            className="bg-gradient-primary hover:opacity-90 transition-all duration-300 transform hover:scale-105 shadow-elevated"
-            onClick={() => scrollToSection('contact')}
-          >
-            <Mail className="mr-2 h-5 w-5" />
-            Get In Touch
-          </Button>
-          
-          <Button 
-            variant="outline" 
-            size="lg"
-            className="border-primary/30 hover:border-primary/60 hover:bg-primary/5 transition-all duration-300"
-            onClick={() => scrollToSection('projects')}
-          >
-            View Projects
-          </Button>
+            <div className="flex items-center gap-4">
+              <Button 
+                size="lg" 
+                className="bg-gradient-primary hover:opacity-90 shadow-glow"
+                onClick={() => scrollToSection('contact')}
+              >
+                GET IN TOUCH
+                <ArrowDown className="ml-2 h-4 w-4" />
+              </Button>
+
+              {/* Social Links */}
+              <div className="flex items-center gap-3 ml-4">
+                <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
+                  <Instagram className="h-4 w-4 text-primary" />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
+                  <Linkedin className="h-4 w-4 text-primary" />
+                </a>
+                <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
+                  <Github className="h-4 w-4 text-primary" />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Content - Profile Image */}
+          <div className="relative flex justify-center lg:justify-end">
+            <div className="relative">
+              {/* Decorative lines */}
+              <div className="absolute -top-10 -right-10 w-40 h-40">
+                <div className="grid grid-cols-8 gap-1 opacity-20">
+                  {Array.from({ length: 64 }, (_, i) => (
+                    <div key={i} className="w-1 h-8 bg-primary/30"></div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Profile Image */}
+              <div className="relative w-80 h-96 rounded-2xl overflow-hidden shadow-elevated">
+                <img 
+                  src={profileImage} 
+                  alt="James Eduard Sajol - AI Automation Specialist" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent"></div>
+              </div>
+
+              {/* Floating accent */}
+              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-gradient-primary rounded-full opacity-80 blur-xl"></div>
+            </div>
+          </div>
         </div>
 
-        {/* Contact Info */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center text-muted-foreground mb-16">
-          <a 
-            href="mailto:james.eduardsajol12@gmail.com" 
-            className="flex items-center gap-2 hover:text-primary transition-colors duration-200"
-          >
-            <Mail className="h-4 w-4" />
-            james.eduardsajol12@gmail.com
-          </a>
-          <a 
-            href="tel:+639934211817" 
-            className="flex items-center gap-2 hover:text-primary transition-colors duration-200"
-          >
-            <Phone className="h-4 w-4" />
-            +63 9934211817
-          </a>
+        {/* Brands/Logos Section */}
+        <div className="mt-20 pt-12 border-t border-border/20">
+          <div className="flex flex-wrap items-center justify-center gap-8 opacity-60">
+            <div className="text-lg font-semibold text-muted-foreground">n8n</div>
+            <div className="text-lg font-semibold text-muted-foreground">Zapier</div>
+            <div className="text-lg font-semibold text-muted-foreground">GoHighLevel</div>
+            <div className="text-lg font-semibold text-muted-foreground">OpenAI</div>
+            <div className="text-lg font-semibold text-muted-foreground">HubSpot</div>
+          </div>
         </div>
 
         {/* Scroll Indicator */}
