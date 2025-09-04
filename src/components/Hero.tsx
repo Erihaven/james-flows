@@ -9,7 +9,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen bg-gradient-hero overflow-hidden pt-16">
+    <section className="relative min-h-[80vh] bg-gradient-hero overflow-hidden pt-16">
       {/* Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Grid pattern */}
@@ -20,16 +20,17 @@ const Hero = () => {
         <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-blue-500 opacity-10 rounded-full blur-2xl"></div>
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-8rem)]">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-12">
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(80vh-8rem)]">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-6">
             <div className="space-y-4">
-              <div className="text-primary text-lg font-medium tracking-wider">JAMES SAJOL</div>
               <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
-                HAY! I'M <span className="text-primary">JAMES</span>
+                HELLO I'M <span className="text-primary">JAMES</span>
                 <br />
-                I'M A <span className="bg-gradient-primary bg-clip-text text-transparent">AI AUTOMATION</span>
+                <span className="bg-gradient-primary bg-clip-text text-transparent">AI AUTOMATION</span>
+                <br />
+                <span className="bg-gradient-primary bg-clip-text text-transparent">SPECIALIST</span>
               </h1>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
                 Transforming business operations through intelligent workflow automation, 
@@ -46,19 +47,6 @@ const Hero = () => {
                 GET IN TOUCH
                 <ArrowDown className="ml-2 h-4 w-4" />
               </Button>
-
-              {/* Social Links */}
-              <div className="flex items-center gap-3 ml-4">
-                <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
-                  <Instagram className="h-4 w-4 text-primary" />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
-                  <Linkedin className="h-4 w-4 text-primary" />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors">
-                  <Github className="h-4 w-4 text-primary" />
-                </a>
-              </div>
             </div>
           </div>
 
@@ -75,7 +63,7 @@ const Hero = () => {
               </div>
 
               {/* Profile Image */}
-              <div className="relative w-80 h-96 rounded-2xl overflow-hidden shadow-elevated">
+              <div className="relative w-80 h-80 rounded-full overflow-hidden shadow-elevated">
                 <img 
                   src={profileImage} 
                   alt="James Eduard Sajol - AI Automation Specialist" 

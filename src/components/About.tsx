@@ -10,7 +10,7 @@ const About = () => {
           {/* Profile Image */}
           <div className="relative">
             <div className="w-96 h-96 mx-auto relative">
-              <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-elevated">
+              <div className="absolute inset-0 rounded-full overflow-hidden shadow-elevated">
                 <img 
                   src={profileImage} 
                   alt="James Eduard Sajol" 
@@ -27,7 +27,7 @@ const About = () => {
           {/* About Content */}
           <div className="space-y-8">
             <div>
-              <div className="text-primary text-sm font-medium tracking-wider mb-4">ABOUT US</div>
+              <div className="text-primary text-sm font-medium tracking-wider mb-4">ABOUT ME</div>
               <h2 className="text-4xl lg:text-5xl font-bold mb-6">
                 I AM AVAILABLE FOR <span className="text-primary">UI</span>
                 <br />
