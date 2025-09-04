@@ -34,8 +34,7 @@ const Hero = () => {
                 </h2>
               </div>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
-                Transforming business operations through intelligent workflow automation, 
-                AI-powered agents, and seamless system integrations.
+                I build intelligent workflows with n8n & Zapier and power them with AI to eliminate busywork, slash operational costs, and make your business run like clockwork.
               </p>
             </div>
 

@@ -110,24 +110,6 @@ const Skills = () => {
           </div>
 
           <div className="space-y-8">
-            {/* Key Stats */}
-            <div className="bg-gradient-primary/5 p-8 rounded-2xl border border-primary/10">
-              <h4 className="text-xl font-bold text-foreground mb-6 text-center">Key Achievements</h4>
-              <div className="space-y-6">
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">100+</div>
-                  <div className="text-sm text-muted-foreground">Automated Workflows</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">50+</div>
-                  <div className="text-sm text-muted-foreground">System Integrations</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold text-primary mb-2">90%</div>
-                  <div className="text-sm text-muted-foreground">Manual Work Reduction</div>
-                </div>
-              </div>
-            </div>
 
             <div className="bg-card p-6 rounded-xl shadow-card border border-border/50">
               <h4 className="text-lg font-semibold text-foreground mb-4">Specializations</h4>
