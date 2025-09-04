@@ -24,14 +24,15 @@ const Hero = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(80vh-8rem)]">
           {/* Left Content */}
           <div className="space-y-6">
-            <div className="space-y-4">
-              <h1 className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
-                HELLO I'M <span className="text-primary">JAMES</span>
-                <br />
-                <span className="bg-gradient-primary bg-clip-text text-transparent">AI AUTOMATION</span>
-                <br />
-                <span className="bg-gradient-primary bg-clip-text text-transparent">SPECIALIST</span>
-              </h1>
+            <div className="space-y-6">
+              <div className="space-y-3">
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
+                  Hi, I'm <span className="text-primary">James</span>
+                </h1>
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-muted-foreground">
+                  AI Automation Specialist
+                </h2>
+              </div>
               <p className="text-lg text-muted-foreground leading-relaxed max-w-lg">
                 Transforming business operations through intelligent workflow automation, 
                 AI-powered agents, and seamless system integrations.
