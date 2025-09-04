@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/providers/theme-provider';
 import App from './App.tsx';
 import './index.css';
 
+// Single BrowserRouter at app root
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
