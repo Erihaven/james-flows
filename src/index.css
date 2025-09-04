@@ -65,7 +65,7 @@ All colors MUST be HSL.
   }
 
   .light {
-    --background: 0 0% 100%;
+    --background: 0 0% 98%;
     --foreground: 222.2 47.4% 11.2%;
 
     --card: 0 0% 100%;
@@ -95,8 +95,8 @@ All colors MUST be HSL.
 
     /* Light theme custom tokens */
     --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(210 98% 78%));
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(210 40% 96%) 100%);
-    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 40% 98%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 95%) 0%, hsl(270 100% 97%) 100%);
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 98%), hsl(210 40% 96%));
     --shadow-card: 0 1px 3px 0 hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
     --shadow-elevated: 0 10px 25px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -4px hsl(0 0% 0% / 0.1);
     --shadow-glow: 0 0 30px hsl(217 91% 60% / 0.2);
