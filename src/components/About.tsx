@@ -29,16 +29,12 @@ const About = () => {
             <div>
               <div className="text-primary text-sm font-medium tracking-wider mb-4">ABOUT ME</div>
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-                I AM AVAILABLE FOR <span className="text-primary">AI AUTOMATION</span>
-                <br />
-                <span className="text-primary">PROJECTS</span>
+                Turn Your Business Operations into Your <span className="text-primary">Competitive Advantage</span>
               </h2>
               <div className="text-lg text-muted-foreground leading-relaxed mb-8 space-y-4">
-                <p>My name is James, and I solve business problems with automation.</p>
+                <p>I solve expensive business problems with intelligent automation. I specialize in designing and building end-to-end systems on platforms like n8n and Zapier, supercharged with AI (OpenAI/GPT), to handle the complex, repetitive tasks that drain your team's productivity.</p>
                 
-                <p>I am a specialist in AI automation, dedicated to building streamlined, intelligent workflows that handle the repetitive tasks that slow your team down. My expertise lies in platforms like n8n (both cloud and self-hosted), complex Zapier integrations, and powerful marketing automation within GoHighLevel.</p>
-                
-                <p>I don't just connect apps; I create end-to-end systems that leverage AI (like OpenAI/GPT) to make decisions, analyze data, and interact with customers. My goal is to build automations that are not only powerful but also reliable and easy to maintain, giving you clarity and control over your operations.</p>
+                <p>My focus is on creating automations that are not only powerful but also reliable and easy to maintain, giving you clarity and control over your operations so you can focus on growth.</p>
               </div>
 
               <Button 
