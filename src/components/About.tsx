@@ -33,11 +33,13 @@ const About = () => {
                 <br />
                 <span className="text-primary">PROJECTS</span>
               </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-                I'm an AI Automation Specialist with extensive expertise in designing and deploying 
-                end-to-end workflow automations that transform how businesses operate. My passion 
-                lies in bridging the gap between complex technical systems and practical business solutions.
-              </p>
+              <div className="text-lg text-muted-foreground leading-relaxed mb-8 space-y-4">
+                <p>My name is James, and I solve business problems with automation.</p>
+                
+                <p>I am a specialist in AI automation, dedicated to building streamlined, intelligent workflows that handle the repetitive tasks that slow your team down. My expertise lies in platforms like n8n (both cloud and self-hosted), complex Zapier integrations, and powerful marketing automation within GoHighLevel.</p>
+                
+                <p>I don't just connect apps; I create end-to-end systems that leverage AI (like OpenAI/GPT) to make decisions, analyze data, and interact with customers. My goal is to build automations that are not only powerful but also reliable and easy to maintain, giving you clarity and control over your operations.</p>
+              </div>
 
               <Button 
                 size="lg" 
