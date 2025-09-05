@@ -48,10 +48,10 @@ const Skills = () => {
         </div>
 
         {/* Detailed Skills Grid */}
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8 items-start">
           <div className="lg:col-span-2">
             <h3 className="text-2xl font-bold text-foreground mb-8">Technical Expertise</h3>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 gap-6 items-start">
               {[
                 {
                   category: "Automation Platforms",
@@ -86,9 +86,9 @@ const Skills = () => {
                   ]
                 }
               ].map((category, index) => (
-                <div key={index} className="bg-card p-6 rounded-xl shadow-card border border-border/50">
+                <div key={index} className="bg-card p-6 rounded-xl shadow-card border border-border/50 h-full flex flex-col">
                   <h4 className="text-lg font-semibold text-foreground mb-4">{category.category}</h4>
-                  <div className="space-y-4">
+                  <div className="space-y-4 flex-grow">
                     {category.skills.map((skill, skillIndex) => (
                       <div key={skillIndex}>
                         <div className="flex justify-between items-center mb-2">
@@ -109,11 +109,10 @@ const Skills = () => {
             </div>
           </div>
 
-          <div className="space-y-8">
-
-            <div className="bg-card p-6 rounded-xl shadow-card border border-border/50">
+          <div className="flex flex-col h-full">
+            <div className="bg-card p-6 rounded-xl shadow-card border border-border/50 h-full flex flex-col">
               <h4 className="text-lg font-semibold text-foreground mb-4">Specializations</h4>
-              <div className="space-y-3">
+              <div className="space-y-3 flex-grow">
                 {[
                   "Lead Qualification Bots",
                   "CRM Data Synchronization", 
@@ -122,7 +121,7 @@ const Skills = () => {
                   "API Integration"
                 ].map((spec, index) => (
                   <div key={index} className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full"></div>
+                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
                     <span className="text-sm text-muted-foreground">{spec}</span>
                   </div>
                 ))}
