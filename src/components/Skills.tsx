@@ -48,68 +48,64 @@ const Skills = () => {
         </div>
 
         {/* Detailed Skills Grid */}
-        <div className="grid lg:grid-cols-3 gap-8 items-start">
-          <div className="lg:col-span-2">
-            <h3 className="text-2xl font-bold text-foreground mb-8">Technical Expertise</h3>
-            <div className="grid md:grid-cols-2 gap-6 items-start">
-              {[
-                {
-                  category: "Automation Platforms",
-                  skills: [
-                    { name: "n8n", level: 95 },
-                    { name: "Zapier", level: 90 },
-                    { name: "GoHighLevel", level: 88 }
-                  ]
-                },
-                {
-                  category: "AI & APIs",
-                  skills: [
-                    { name: "OpenAI API", level: 92 },
-                    { name: "REST APIs", level: 85 },
-                    { name: "Webhooks", level: 90 }
-                  ]
-                },
-                {
-                  category: "Data & CRM",
-                  skills: [
-                    { name: "HubSpot", level: 85 },
-                    { name: "Google Workspace", level: 95 },
-                    { name: "Data Sync", level: 90 }
-                  ]
-                },
-                {
-                  category: "Development",
-                  skills: [
-                    { name: "Docker", level: 75 },
-                    { name: "Self-hosting", level: 80 },
-                    { name: "Redis", level: 70 }
-                  ]
-                }
-              ].map((category, index) => (
-                <div key={index} className="bg-card p-6 rounded-xl shadow-card border border-border/50 h-full flex flex-col">
-                  <h4 className="text-lg font-semibold text-foreground mb-4">{category.category}</h4>
-                  <div className="space-y-4 flex-grow">
-                    {category.skills.map((skill, skillIndex) => (
-                      <div key={skillIndex}>
-                        <div className="flex justify-between items-center mb-2">
-                          <span className="text-sm font-medium text-foreground">{skill.name}</span>
-                          <span className="text-xs text-muted-foreground">{skill.level}%</span>
-                        </div>
-                        <div className="w-full bg-muted rounded-full h-2">
-                          <div 
-                            className="bg-gradient-primary h-2 rounded-full transition-all duration-700 ease-out"
-                            style={{ width: `${skill.level}%` }}
-                          ></div>
-                        </div>
+        <div className="space-y-6">
+          <h3 className="text-2xl font-bold text-foreground">Technical Expertise</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 items-start">
+            {[
+              {
+                category: "Automation Platforms",
+                skills: [
+                  { name: "n8n", level: 95 },
+                  { name: "Zapier", level: 90 },
+                  { name: "GoHighLevel", level: 88 }
+                ]
+              },
+              {
+                category: "AI & APIs",
+                skills: [
+                  { name: "OpenAI API", level: 92 },
+                  { name: "REST APIs", level: 85 },
+                  { name: "Webhooks", level: 90 }
+                ]
+              },
+              {
+                category: "Data & CRM",
+                skills: [
+                  { name: "HubSpot", level: 85 },
+                  { name: "Google Workspace", level: 95 },
+                  { name: "Data Sync", level: 90 }
+                ]
+              },
+              {
+                category: "Development",
+                skills: [
+                  { name: "Docker", level: 75 },
+                  { name: "Self-hosting", level: 80 },
+                  { name: "Redis", level: 70 }
+                ]
+              }
+            ].map((category, index) => (
+              <div key={index} className="bg-card p-6 rounded-xl shadow-card border border-border/50 h-full flex flex-col">
+                <h4 className="text-lg font-semibold text-foreground mb-4">{category.category}</h4>
+                <div className="space-y-4 flex-grow">
+                  {category.skills.map((skill, skillIndex) => (
+                    <div key={skillIndex}>
+                      <div className="flex justify-between items-center mb-2">
+                        <span className="text-sm font-medium text-foreground">{skill.name}</span>
+                        <span className="text-xs text-muted-foreground">{skill.level}%</span>
                       </div>
-                    ))}
-                  </div>
+                      <div className="w-full bg-muted rounded-full h-2">
+                        <div 
+                          className="bg-gradient-primary h-2 rounded-full transition-all duration-700 ease-out"
+                          style={{ width: `${skill.level}%` }}
+                        ></div>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex flex-col h-full">
+              </div>
+            ))}
+            
             <div className="bg-card p-6 rounded-xl shadow-card border border-border/50 h-full flex flex-col">
               <h4 className="text-lg font-semibold text-foreground mb-4">Specializations</h4>
               <div className="space-y-3 flex-grow">
