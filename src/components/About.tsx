@@ -50,51 +50,47 @@ const About = () => {
         </div>
 
         {/* Detailed About */}
-        <div className="grid lg:grid-cols-3 gap-8 items-start">
-          <div className="lg:col-span-2 space-y-6">
-            <h3 className="text-2xl font-bold text-foreground mb-6">My Expertise</h3>
-            
-            <div className="grid md:grid-cols-2 gap-6 items-start">
-              <div className="bg-card p-6 rounded-xl shadow-card border border-border/50 hover:shadow-elevated transition-all duration-300 h-full flex flex-col">
-                <h4 className="text-lg font-semibold mb-4 text-foreground">Automation Platforms</h4>
-                <ul className="space-y-3 text-foreground/80 flex-grow">
-                  <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    n8n (Cloud & Self-Hosted)
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    Zapier Advanced Workflows
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    GoHighLevel CRM Automation
-                  </li>
-                </ul>
-              </div>
-
-              <div className="bg-card p-6 rounded-xl shadow-card border border-border/50 hover:shadow-elevated transition-all duration-300 h-full flex flex-col">
-                <h4 className="text-lg font-semibold mb-4 text-foreground">AI & Integration</h4>
-                <ul className="space-y-3 text-foreground/80 flex-grow">
-                  <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    OpenAI API & GPT Models
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    RAG Systems Development
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
-                    REST APIs & Webhooks
-                  </li>
-                </ul>
-              </div>
+        <div className="space-y-6">
+          <h3 className="text-2xl font-bold text-foreground mb-6">My Expertise</h3>
+          
+          <div className="grid md:grid-cols-3 gap-6 items-start">
+            <div className="bg-card p-6 rounded-xl shadow-card border border-border/50 hover:shadow-elevated transition-all duration-300 h-full flex flex-col">
+              <h4 className="text-lg font-semibold mb-4 text-foreground">Automation Platforms</h4>
+              <ul className="space-y-3 text-foreground/80 flex-grow">
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  n8n (Cloud & Self-Hosted)
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  Zapier Advanced Workflows
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  GoHighLevel CRM Automation
+                </li>
+              </ul>
             </div>
-          </div>
 
-          <div className="flex flex-col h-full">
-            <div className="bg-card p-6 rounded-xl shadow-card border border-border/50 h-full flex flex-col">
+            <div className="bg-card p-6 rounded-xl shadow-card border border-border/50 hover:shadow-elevated transition-all duration-300 h-full flex flex-col">
+              <h4 className="text-lg font-semibold mb-4 text-foreground">AI & Integration</h4>
+              <ul className="space-y-3 text-foreground/80 flex-grow">
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  OpenAI API & GPT Models
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  RAG Systems Development
+                </li>
+                <li className="flex items-center gap-3">
+                  <div className="w-2 h-2 bg-primary rounded-full flex-shrink-0"></div>
+                  REST APIs & Webhooks
+                </li>
+              </ul>
+            </div>
+
+            <div className="bg-card p-6 rounded-xl shadow-card border border-border/50 hover:shadow-elevated transition-all duration-300 h-full flex flex-col">
               <h4 className="text-lg font-semibold mb-4 text-foreground">Experience</h4>
               <div className="space-y-4 flex-grow">
                 <div>
