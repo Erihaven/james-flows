@@ -112,7 +112,7 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 
-  /* Floating animations for background elements */
+  /* Hero Section Animations */
   @keyframes float-gentle {
     0%, 100% { 
       transform: translateY(0px) translateX(0px); 
@@ -152,6 +152,268 @@ All colors MUST be HSL.
     }
   }
 
+  /* About Section Animations */
+  @keyframes float-particles {
+    0%, 100% { 
+      transform: translateY(0px) translateX(0px) scale(1); 
+      opacity: 0.3;
+    }
+    50% { 
+      transform: translateY(-15px) translateX(8px) scale(1.2);
+      opacity: 0.6;
+    }
+  }
+
+  @keyframes float-particles-slow {
+    0%, 100% { 
+      transform: translateY(0px) translateX(0px); 
+      opacity: 0.2;
+    }
+    50% { 
+      transform: translateY(-25px) translateX(-5px);
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes float-particles-reverse {
+    0%, 100% { 
+      transform: translateY(0px) translateX(0px); 
+      opacity: 0.15;
+    }
+    50% { 
+      transform: translateY(20px) translateX(12px);
+      opacity: 0.4;
+    }
+  }
+
+  @keyframes float-particles-gentle {
+    0%, 100% { 
+      transform: translateY(0px) translateX(0px); 
+      opacity: 0.1;
+    }
+    50% { 
+      transform: translateY(-8px) translateX(-3px);
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes pulse-line {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.5; }
+  }
+
+  @keyframes pulse-line-reverse {
+    0%, 100% { opacity: 0.15; }
+    50% { opacity: 0.4; }
+  }
+
+  /* Projects Section Animations */
+  @keyframes tech-float {
+    0%, 100% { 
+      transform: translateY(0px) translateX(0px) rotate(0deg); 
+    }
+    50% { 
+      transform: translateY(-12px) translateX(8px) rotate(180deg); 
+    }
+  }
+
+  @keyframes tech-float-reverse {
+    0%, 100% { 
+      transform: translateY(0px) translateX(0px) rotate(0deg); 
+    }
+    50% { 
+      transform: translateY(15px) translateX(-6px) rotate(-180deg); 
+    }
+  }
+
+  @keyframes tech-float-slow {
+    0%, 100% { 
+      transform: translateY(0px) translateX(0px) rotate(0deg); 
+    }
+    33% { 
+      transform: translateY(-8px) translateX(10px) rotate(120deg); 
+    }
+    66% { 
+      transform: translateY(12px) translateX(-8px) rotate(240deg); 
+    }
+  }
+
+  @keyframes binary-scroll {
+    0% { 
+      transform: translateY(0px);
+      opacity: 0.1;
+    }
+    50% { 
+      transform: translateY(-10px);
+      opacity: 0.3;
+    }
+    100% { 
+      transform: translateY(-20px);
+      opacity: 0.1;
+    }
+  }
+
+  @keyframes binary-scroll-reverse {
+    0% { 
+      transform: translateY(0px);
+      opacity: 0.08;
+    }
+    50% { 
+      transform: translateY(10px);
+      opacity: 0.25;
+    }
+    100% { 
+      transform: translateY(20px);
+      opacity: 0.08;
+    }
+  }
+
+  @keyframes draw-line {
+    0% { stroke-dashoffset: 100; }
+    100% { stroke-dashoffset: 0; }
+  }
+
+  /* Skills Section Animations */
+  @keyframes node-pulse {
+    0%, 100% { 
+      transform: scale(1);
+      opacity: 0.2;
+    }
+    50% { 
+      transform: scale(1.3);
+      opacity: 0.6;
+    }
+  }
+
+  @keyframes node-pulse-slow {
+    0%, 100% { 
+      transform: scale(1);
+      opacity: 0.3;
+    }
+    50% { 
+      transform: scale(1.5);
+      opacity: 0.7;
+    }
+  }
+
+  @keyframes node-pulse-reverse {
+    0%, 100% { 
+      transform: scale(1);
+      opacity: 0.15;
+    }
+    50% { 
+      transform: scale(1.2);
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes pulse-connection {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.6; }
+  }
+
+  @keyframes pulse-connection-reverse {
+    0%, 100% { opacity: 0.15; }
+    50% { opacity: 0.5; }
+  }
+
+  @keyframes workflow-float {
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg); 
+    }
+    50% { 
+      transform: translateY(-10px) rotate(10deg); 
+    }
+  }
+
+  @keyframes workflow-float-reverse {
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg); 
+    }
+    50% { 
+      transform: translateY(8px) rotate(-8deg); 
+    }
+  }
+
+  /* Contact Section Animations */
+  @keyframes message-float {
+    0%, 100% { 
+      transform: translateY(0px) translateX(0px) scale(1); 
+    }
+    50% { 
+      transform: translateY(-8px) translateX(4px) scale(1.1); 
+    }
+  }
+
+  @keyframes message-float-reverse {
+    0%, 100% { 
+      transform: translateY(0px) translateX(0px) scale(1); 
+    }
+    50% { 
+      transform: translateY(10px) translateX(-3px) scale(0.9); 
+    }
+  }
+
+  @keyframes message-float-slow {
+    0%, 100% { 
+      transform: translateY(0px) translateX(0px); 
+    }
+    50% { 
+      transform: translateY(-12px) translateX(6px); 
+    }
+  }
+
+  @keyframes connect-line {
+    0% { stroke-dashoffset: 32; }
+    100% { stroke-dashoffset: 0; }
+  }
+
+  @keyframes connect-line-reverse {
+    0% { stroke-dashoffset: 0; }
+    100% { stroke-dashoffset: 32; }
+  }
+
+  @keyframes comm-float {
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg); 
+    }
+    50% { 
+      transform: translateY(-6px) rotate(5deg); 
+    }
+  }
+
+  @keyframes comm-float-reverse {
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg); 
+    }
+    50% { 
+      transform: translateY(8px) rotate(-5deg); 
+    }
+  }
+
+  @keyframes signal-wave {
+    0% { 
+      transform: scale(1);
+      opacity: 0.5;
+    }
+    100% { 
+      transform: scale(2);
+      opacity: 0;
+    }
+  }
+
+  @keyframes signal-wave-delay {
+    0% { 
+      transform: scale(1);
+      opacity: 0.3;
+    }
+    100% { 
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  }
+
+  /* Animation Classes */
   .animate-float-gentle {
     animation: float-gentle 8s ease-in-out infinite;
   }
@@ -166,5 +428,117 @@ All colors MUST be HSL.
 
   .animate-float-reverse {
     animation: float-reverse 10s ease-in-out infinite;
+  }
+
+  .animate-float-particles {
+    animation: float-particles 7s ease-in-out infinite;
+  }
+
+  .animate-float-particles-slow {
+    animation: float-particles-slow 9s ease-in-out infinite;
+  }
+
+  .animate-float-particles-reverse {
+    animation: float-particles-reverse 6s ease-in-out infinite;
+  }
+
+  .animate-float-particles-gentle {
+    animation: float-particles-gentle 8s ease-in-out infinite;
+  }
+
+  .animate-pulse-line {
+    animation: pulse-line 4s ease-in-out infinite;
+  }
+
+  .animate-pulse-line-reverse {
+    animation: pulse-line-reverse 5s ease-in-out infinite;
+  }
+
+  .animate-tech-float {
+    animation: tech-float 8s ease-in-out infinite;
+  }
+
+  .animate-tech-float-reverse {
+    animation: tech-float-reverse 7s ease-in-out infinite;
+  }
+
+  .animate-tech-float-slow {
+    animation: tech-float-slow 10s ease-in-out infinite;
+  }
+
+  .animate-binary-scroll {
+    animation: binary-scroll 6s linear infinite;
+  }
+
+  .animate-binary-scroll-reverse {
+    animation: binary-scroll-reverse 8s linear infinite;
+  }
+
+  .animate-draw-line {
+    animation: draw-line 4s ease-in-out infinite;
+  }
+
+  .animate-node-pulse {
+    animation: node-pulse 3s ease-in-out infinite;
+  }
+
+  .animate-node-pulse-slow {
+    animation: node-pulse-slow 4s ease-in-out infinite;
+  }
+
+  .animate-node-pulse-reverse {
+    animation: node-pulse-reverse 3.5s ease-in-out infinite;
+  }
+
+  .animate-pulse-connection {
+    animation: pulse-connection 3s ease-in-out infinite;
+  }
+
+  .animate-pulse-connection-reverse {
+    animation: pulse-connection-reverse 4s ease-in-out infinite;
+  }
+
+  .animate-workflow-float {
+    animation: workflow-float 6s ease-in-out infinite;
+  }
+
+  .animate-workflow-float-reverse {
+    animation: workflow-float-reverse 7s ease-in-out infinite;
+  }
+
+  .animate-message-float {
+    animation: message-float 5s ease-in-out infinite;
+  }
+
+  .animate-message-float-reverse {
+    animation: message-float-reverse 6s ease-in-out infinite;
+  }
+
+  .animate-message-float-slow {
+    animation: message-float-slow 8s ease-in-out infinite;
+  }
+
+  .animate-connect-line {
+    animation: connect-line 3s linear infinite;
+  }
+
+  .animate-connect-line-reverse {
+    animation: connect-line-reverse 4s linear infinite;
+  }
+
+  .animate-comm-float {
+    animation: comm-float 5s ease-in-out infinite;
+  }
+
+  .animate-comm-float-reverse {
+    animation: comm-float-reverse 6s ease-in-out infinite;
+  }
+
+  .animate-signal-wave {
+    animation: signal-wave 2s ease-out infinite;
+  }
+
+  .animate-signal-wave-delay {
+    animation: signal-wave-delay 2s ease-out infinite 0.5s;
   }
 }

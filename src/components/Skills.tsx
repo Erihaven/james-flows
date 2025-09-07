@@ -2,7 +2,31 @@ import { Bot, Zap, Database, Globe, Workflow, Brain } from "lucide-react";
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-20 bg-gradient-subtle">
+    <section id="skills" className="py-20 bg-gradient-subtle relative overflow-hidden">
+      {/* Workflow-themed animated background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Node network visualization */}
+        <div className="absolute top-1/4 left-1/5 w-3 h-3 bg-primary/20 rounded-full animate-node-pulse"></div>
+        <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-primary/30 rounded-full animate-node-pulse-slow"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-4 h-4 bg-primary/15 rounded-full animate-node-pulse-reverse"></div>
+        <div className="absolute bottom-1/4 right-1/5 w-2.5 h-2.5 bg-primary/25 rounded-full animate-node-pulse"></div>
+        
+        {/* Workflow connections */}
+        <svg className="absolute top-1/4 left-1/5 w-32 h-16 opacity-20">
+          <line x1="12" y1="12" x2="120" y2="50" stroke="currentColor" strokeWidth="1" className="text-primary animate-pulse-connection" strokeDasharray="2,2" />
+        </svg>
+        <svg className="absolute bottom-1/3 right-1/3 w-24 h-20 opacity-15">
+          <line x1="8" y1="16" x2="88" y2="12" stroke="currentColor" strokeWidth="1" className="text-primary animate-pulse-connection-reverse" strokeDasharray="3,3" />
+        </svg>
+        
+        {/* Automation symbols */}
+        <div className="absolute top-1/2 left-12 opacity-8 animate-workflow-float">
+          <Workflow className="h-6 w-6 text-primary" />
+        </div>
+        <div className="absolute bottom-1/4 right-16 opacity-10 animate-workflow-float-reverse">
+          <Brain className="h-5 w-5 text-primary" />
+        </div>
+      </div>
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <div className="text-primary text-sm font-medium tracking-wider mb-4">SERVICES</div>

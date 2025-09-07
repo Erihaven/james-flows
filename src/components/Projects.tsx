@@ -45,7 +45,41 @@ const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-background/50">
+    <section id="projects" className="py-20 bg-background/50 relative overflow-hidden">
+      {/* Tech-themed animated background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Floating tech icons */}
+        <div className="absolute top-20 left-10 opacity-10 animate-tech-float">
+          <Bot className="h-8 w-8 text-primary" />
+        </div>
+        <div className="absolute top-1/3 right-16 opacity-15 animate-tech-float-reverse">
+          <Database className="h-6 w-6 text-primary" />
+        </div>
+        <div className="absolute bottom-1/4 left-1/4 opacity-10 animate-tech-float-slow">
+          <Zap className="h-7 w-7 text-primary" />
+        </div>
+        <div className="absolute top-1/2 right-1/3 opacity-12 animate-tech-float">
+          <TrendingUp className="h-5 w-5 text-primary" />
+        </div>
+        
+        {/* Binary code effect */}
+        <div className="absolute top-1/4 right-20 text-primary/10 font-mono text-xs animate-binary-scroll">
+          01001001<br/>10110100<br/>11010011
+        </div>
+        <div className="absolute bottom-1/3 left-16 text-primary/8 font-mono text-xs animate-binary-scroll-reverse">
+          11001010<br/>01110110<br/>10101001
+        </div>
+        
+        {/* Circuit-like connections */}
+        <svg className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-5" width="200" height="200">
+          <path d="M10,10 L50,50 L90,10 L130,50 L170,10 L190,30" 
+                stroke="currentColor" 
+                strokeWidth="1" 
+                fill="none" 
+                className="text-primary animate-draw-line"
+                strokeDasharray="5,5" />
+        </svg>
+      </div>
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <div className="text-primary text-sm font-medium tracking-wider mb-4">MY WORK</div>

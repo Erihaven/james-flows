@@ -39,7 +39,36 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-background">
+    <section id="contact" className="py-20 bg-background relative overflow-hidden">
+      {/* Communication-themed animated background */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Message bubbles */}
+        <div className="absolute top-1/4 left-16 w-8 h-6 bg-primary/10 rounded-full animate-message-float"></div>
+        <div className="absolute top-1/3 right-20 w-6 h-4 bg-primary/15 rounded-full animate-message-float-reverse"></div>
+        <div className="absolute bottom-1/3 left-1/4 w-10 h-7 bg-primary/8 rounded-full animate-message-float-slow"></div>
+        
+        {/* Connection lines */}
+        <svg className="absolute top-1/2 left-1/3 w-40 h-2 opacity-10">
+          <line x1="0" y1="1" x2="160" y2="1" stroke="currentColor" strokeWidth="1" className="text-primary animate-connect-line" strokeDasharray="4,4" />
+        </svg>
+        <svg className="absolute bottom-1/4 right-1/4 w-32 h-2 opacity-15">
+          <line x1="0" y1="1" x2="128" y2="1" stroke="currentColor" strokeWidth="1" className="text-primary animate-connect-line-reverse" strokeDasharray="6,6" />
+        </svg>
+        
+        {/* Email/communication icons */}
+        <div className="absolute top-20 right-1/4 opacity-8 animate-comm-float">
+          <Mail className="h-5 w-5 text-primary" />
+        </div>
+        <div className="absolute bottom-20 left-1/5 opacity-10 animate-comm-float-reverse">
+          <Send className="h-4 w-4 text-primary" />
+        </div>
+        
+        {/* Signal waves */}
+        <div className="absolute top-1/3 left-1/2 opacity-5">
+          <div className="w-8 h-8 border border-primary/20 rounded-full animate-signal-wave"></div>
+          <div className="absolute top-2 left-2 w-4 h-4 border border-primary/30 rounded-full animate-signal-wave-delay"></div>
+        </div>
+      </div>
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">

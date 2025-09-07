@@ -3,7 +3,21 @@ import { Button } from "@/components/ui/button";
 
 const About = () => {
   return (
-    <section id="about" className="py-20 bg-background/50">
+    <section id="about" className="py-20 bg-background/50 relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Floating particles */}
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary/30 rounded-full animate-float-particles"></div>
+        <div className="absolute top-1/3 right-1/5 w-1 h-1 bg-primary/20 rounded-full animate-float-particles-slow"></div>
+        <div className="absolute bottom-1/4 left-1/5 w-3 h-3 bg-primary/15 rounded-full animate-float-particles-reverse"></div>
+        <div className="absolute top-3/4 right-1/3 w-1.5 h-1.5 bg-primary/25 rounded-full animate-float-particles"></div>
+        <div className="absolute top-1/2 left-1/2 w-2 h-2 bg-primary/10 rounded-full animate-float-particles-gentle"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-1 h-1 bg-primary/20 rounded-full animate-float-particles-slow"></div>
+        
+        {/* Subtle connecting lines */}
+        <div className="absolute top-1/4 left-1/3 w-16 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent animate-pulse-line"></div>
+        <div className="absolute bottom-1/3 right-1/4 w-12 h-px bg-gradient-to-r from-transparent via-primary/15 to-transparent animate-pulse-line-reverse"></div>
+      </div>
       <div className="max-w-7xl mx-auto px-6">
         {/* About Section */}
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
