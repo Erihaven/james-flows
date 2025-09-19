@@ -455,43 +455,6 @@ All colors MUST be HSL.
     }
   }
 
-  /* Scrollytelling Timeline Animations */
-  @keyframes typewriter-cursor {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
-  }
-
-  @keyframes timeline-progress {
-    from { height: 0%; }
-    to { height: 100%; }
-  }
-
-  @keyframes robot-assemble {
-    0% { 
-      transform: translate(-50%, -50%) scale(0) rotate(360deg);
-      opacity: 0;
-    }
-    50% {
-      transform: translate(-50%, -50%) scale(0.7) rotate(180deg);
-      opacity: 0.7;
-    }
-    100% { 
-      transform: translate(-50%, -50%) scale(1) rotate(0deg);
-      opacity: 1;
-    }
-  }
-
-  @keyframes story-reveal {
-    0% { 
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% { 
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
   /* Animation Classes */
   .animate-float-gentle {
     animation: float-gentle 8s ease-in-out infinite;
@@ -631,21 +594,5 @@ All colors MUST be HSL.
 
   .animate-neural-pulse {
     animation: neural-pulse 2s ease-in-out infinite;
-  }
-
-  .animate-typewriter-cursor {
-    animation: typewriter-cursor 1s infinite;
-  }
-
-  .animate-timeline-progress {
-    animation: timeline-progress 0.7s ease-out forwards;
-  }
-
-  .animate-robot-assemble {
-    animation: robot-assemble 1s ease-out forwards;
-  }
-
-  .animate-story-reveal {
-    animation: story-reveal 0.5s ease-out forwards;
   }
 }
