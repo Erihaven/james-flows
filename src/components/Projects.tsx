@@ -4,7 +4,7 @@ import { ExternalLink, Bot, Zap, Database, TrendingUp } from "lucide-react";
 import { useState } from "react";
 
 const Projects = () => {
-  const [selectedImage, setSelectedImage] = useState<{title: string, image: string} | null>(null);
+  const [selectedProject, setSelectedProject] = useState<any>(null);
   const projects = [
     {
       title: "RAG Supabase AI Agent",
@@ -101,7 +101,7 @@ const Projects = () => {
               className="bg-card rounded-2xl overflow-hidden shadow-card border border-border/50 hover:shadow-elevated transition-all duration-300 group"
             >
               {/* Project Image */}
-              <div className="relative h-48 overflow-hidden cursor-pointer" onClick={() => setSelectedImage({title: project.title, image: project.image})}>
+              <div className="relative h-48 overflow-hidden cursor-pointer" onClick={() => setSelectedProject(project)}>
                 <img 
                   src={project.image} 
                   alt={project.title}
@@ -166,18 +166,78 @@ const Projects = () => {
           </Button>
         </div>
 
-        {/* Image Modal */}
-        <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-          <DialogContent className="max-w-4xl w-full p-0 bg-transparent border-none">
-            {selectedImage && (
-              <div className="relative">
-                <img 
-                  src={selectedImage.image} 
-                  alt={selectedImage.title}
-                  className="w-full h-auto rounded-lg"
-                />
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
-                  <h3 className="text-white text-xl font-bold">{selectedImage.title}</h3>
+        {/* Project Details Modal */}
+        <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
+          <DialogContent className="max-w-5xl w-full max-h-[90vh] overflow-y-auto">
+            {selectedProject && (
+              <div className="grid lg:grid-cols-2 gap-8">
+                {/* Project Image */}
+                <div className="relative">
+                  <img 
+                    src={selectedProject.image} 
+                    alt={selectedProject.title}
+                    className="w-full h-64 lg:h-80 object-cover rounded-lg"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 bg-primary text-primary-foreground text-xs font-medium rounded-full">
+                      {selectedProject.category}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Project Details */}
+                <div className="space-y-6">
+                  <div>
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="p-2 bg-primary/10 rounded-lg text-primary">
+                        {selectedProject.icon}
+                      </div>
+                      <h2 className="text-2xl lg:text-3xl font-bold text-foreground">
+                        {selectedProject.title}
+                      </h2>
+                    </div>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {selectedProject.description}
+                    </p>
+                  </div>
+
+                  {/* Technologies */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground mb-3">Technologies Used</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedProject.technologies.map((tech: string, index: number) => (
+                        <span 
+                          key={index}
+                          className="px-3 py-1 bg-muted text-muted-foreground text-sm rounded-full font-medium"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Key Outcomes */}
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground mb-3">Key Outcomes</h3>
+                    <ul className="space-y-2">
+                      {selectedProject.outcomes.map((outcome: string, index: number) => (
+                        <li key={index} className="flex items-start gap-2">
+                          <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-muted-foreground">{outcome}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Action Button */}
+                  <div className="pt-4">
+                    <Button 
+                      className="w-full bg-gradient-primary hover:opacity-90"
+                      onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                    >
+                      Get Similar Solution
+                    </Button>
+                  </div>
                 </div>
               </div>
             )}
