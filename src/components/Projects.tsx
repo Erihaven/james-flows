@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { ExternalLink, Bot, Zap, Database, TrendingUp } from "lucide-react";
+import { useState } from "react";
 
 const Projects = () => {
+  const [selectedImage, setSelectedImage] = useState<{title: string, image: string} | null>(null);
   const projects = [
     {
       title: "RAG Supabase AI Agent",
@@ -98,7 +101,7 @@ const Projects = () => {
               className="bg-card rounded-2xl overflow-hidden shadow-card border border-border/50 hover:shadow-elevated transition-all duration-300 group"
             >
               {/* Project Image */}
-              <div className="relative h-48 overflow-hidden">
+              <div className="relative h-48 overflow-hidden cursor-pointer" onClick={() => setSelectedImage({title: project.title, image: project.image})}>
                 <img 
                   src={project.image} 
                   alt={project.title}
@@ -162,6 +165,24 @@ const Projects = () => {
             VIEW ALL PROJECTS
           </Button>
         </div>
+
+        {/* Image Modal */}
+        <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+          <DialogContent className="max-w-4xl w-full p-0 bg-transparent border-none">
+            {selectedImage && (
+              <div className="relative">
+                <img 
+                  src={selectedImage.image} 
+                  alt={selectedImage.title}
+                  className="w-full h-auto rounded-lg"
+                />
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
+                  <h3 className="text-white text-xl font-bold">{selectedImage.title}</h3>
+                </div>
+              </div>
+            )}
+          </DialogContent>
+        </Dialog>
       </div>
     </section>
   );
