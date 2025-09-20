@@ -4,17 +4,17 @@ import { ExternalLink, Bot, Zap, Database, TrendingUp } from "lucide-react";
 const Projects = () => {
   const projects = [
     {
-      title: "AI Lead Qualification System",
-      description: "Built comprehensive AI bot using n8n + OpenAI + GoHighLevel that automatically scores inbound leads, syncs to CRM pipeline, and triggers Slack alerts for sales team.",
-      technologies: ["n8n", "OpenAI API", "GoHighLevel", "Slack API"],
+      title: "RAG Supabase AI Agent",
+      description: "Built comprehensive RAG (Retrieval-Augmented Generation) AI agent workflow using Supabase vector search, OpenAI embeddings, and automated chat processing pipeline.",
+      technologies: ["Supabase", "OpenAI API", "Vector Search", "RAG Pipeline"],
       outcomes: [
-        "90% reduction in manual lead scoring time",
-        "40% increase in qualified lead conversion",
-        "Real-time sales team notifications"
+        "90% reduction in manual data processing",
+        "Intelligent document retrieval system",
+        "Real-time chat agent responses"
       ],
       icon: <Bot className="h-6 w-6" />,
       category: "AI Automation",
-      image: "https://via.placeholder.com/400x250/1e293b/60a5fa?text=AI+Lead+System"
+      image: "/src/assets/rag-supabase-agent.png"
     },
     {
       title: "Multi-CRM Sync Hub",
