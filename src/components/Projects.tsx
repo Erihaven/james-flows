@@ -1,34 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle, DialogDescription } from "@/components/ui/dialog";
 import { ExternalLink, Bot, Zap, Database, TrendingUp, Calendar, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<any>(null);
   
-  const handleNextProject = () => {
-    const currentIndex = projects.findIndex(p => p.title === selectedProject?.title);
-    const nextIndex = (currentIndex + 1) % projects.length;
-    setSelectedProject(projects[nextIndex]);
-  };
-
-  const handlePreviousProject = () => {
-    const currentIndex = projects.findIndex(p => p.title === selectedProject?.title);
-    const previousIndex = currentIndex === 0 ? projects.length - 1 : currentIndex - 1;
-    setSelectedProject(projects[previousIndex]);
-  };
-
-  // Keyboard navigation
-  useEffect(() => {
-    const handleKeyPress = (e: KeyboardEvent) => {
-      if (!selectedProject) return;
-      if (e.key === 'ArrowRight') handleNextProject();
-      if (e.key === 'ArrowLeft') handlePreviousProject();
-    };
-    window.addEventListener('keydown', handleKeyPress);
-    return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [selectedProject]);
-
   const projects = [
     {
       title: "RAG Supabase AI Agent",
@@ -84,6 +61,29 @@ const Projects = () => {
       link: "https://ghl.jeshub.site/loghorizon"
     }
   ];
+
+  const handleNextProject = () => {
+    const currentIndex = projects.findIndex(p => p.title === selectedProject?.title);
+    const nextIndex = (currentIndex + 1) % projects.length;
+    setSelectedProject(projects[nextIndex]);
+  };
+
+  const handlePreviousProject = () => {
+    const currentIndex = projects.findIndex(p => p.title === selectedProject?.title);
+    const previousIndex = currentIndex === 0 ? projects.length - 1 : currentIndex - 1;
+    setSelectedProject(projects[previousIndex]);
+  };
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyPress = (e: KeyboardEvent) => {
+      if (!selectedProject) return;
+      if (e.key === 'ArrowRight') handleNextProject();
+      if (e.key === 'ArrowLeft') handlePreviousProject();
+    };
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [selectedProject, projects]);
 
   return (
     <section id="projects" className="py-20 bg-background/50 relative overflow-hidden">
@@ -207,23 +207,34 @@ const Projects = () => {
         {/* Project Details Modal */}
         <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
           <DialogContent className="max-w-5xl w-full max-h-[90vh] overflow-y-auto relative">
+            <DialogTitle className="sr-only">
+              {selectedProject?.title || "Project Details"}
+            </DialogTitle>
+            <DialogDescription className="sr-only">
+              {selectedProject?.description || "View project details, technologies used, and outcomes"}
+            </DialogDescription>
+            
             {/* Navigation Buttons */}
-            <Button
-              variant="outline"
-              size="icon"
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 rounded-full bg-background/80 backdrop-blur-sm hover:bg-background"
-              onClick={handlePreviousProject}
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </Button>
-            <Button
-              variant="outline"
-              size="icon"
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 rounded-full bg-background/80 backdrop-blur-sm hover:bg-background"
-              onClick={handleNextProject}
-            >
-              <ChevronRight className="h-6 w-6" />
-            </Button>
+            {selectedProject && (
+              <>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="absolute left-4 top-1/2 -translate-y-1/2 z-10 rounded-full bg-background/80 backdrop-blur-sm hover:bg-background"
+                  onClick={handlePreviousProject}
+                >
+                  <ChevronLeft className="h-6 w-6" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="absolute right-4 top-1/2 -translate-y-1/2 z-10 rounded-full bg-background/80 backdrop-blur-sm hover:bg-background"
+                  onClick={handleNextProject}
+                >
+                  <ChevronRight className="h-6 w-6" />
+                </Button>
+              </>
+            )}
 
             {selectedProject && (
               <div className="grid lg:grid-cols-2 gap-8">
