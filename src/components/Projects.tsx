@@ -17,7 +17,7 @@ const Projects = () => {
       ],
       icon: <Bot className="h-6 w-6" />,
       category: "AI Automation",
-      image: "/src/assets/rag-supabase-agent.png"
+      image: "/src/assets/chat-agent-supabase.png"
     },
     {
       title: "Multi-CRM Sync Hub",
@@ -30,7 +30,7 @@ const Projects = () => {
       ],
       icon: <Database className="h-6 w-6" />,
       category: "Data Integration",
-      image: "https://via.placeholder.com/400x250/1e293b/22d3ee?text=CRM+Sync+Hub"
+      image: "/src/assets/gdrive-to-supabase.png"
     },
     {
       title: "Smart Email Campaign",
@@ -43,7 +43,7 @@ const Projects = () => {
       ],
       icon: <Zap className="h-6 w-6" />,
       category: "Marketing Automation",
-      image: "https://via.placeholder.com/400x250/1e293b/f59e0b?text=Email+Campaign"
+      image: "/src/assets/booking-reschedule-automation.png"
     }
   ];
 
