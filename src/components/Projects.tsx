@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { ExternalLink, Bot, Zap, Database, TrendingUp } from "lucide-react";
+import { ExternalLink, Bot, Zap, Database, TrendingUp, Calendar } from "lucide-react";
 import { useState } from "react";
 
 const Projects = () => {
@@ -44,6 +44,20 @@ const Projects = () => {
       icon: <Zap className="h-6 w-6" />,
       category: "Marketing Automation",
       image: "/src/assets/booking-reschedule-automation.png"
+    },
+    {
+      title: "LogHorizon Condo Booking",
+      description: "Full-featured condo rental booking platform with automated booking management, rescheduling system, and Google Drive integration for seamless operations.",
+      technologies: ["n8n Workflows", "Booking Automation", "Google Drive API", "Supabase"],
+      outcomes: [
+        "Automated booking confirmations",
+        "Smart rescheduling system",
+        "Seamless rental management"
+      ],
+      icon: <Calendar className="h-6 w-6" />,
+      category: "Booking Platform",
+      image: "/src/assets/loghorizon-booking.png",
+      link: "https://ghl.jeshub.site/loghorizon"
     }
   ];
 
@@ -94,7 +108,7 @@ const Projects = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid lg:grid-cols-2 xl:grid-cols-4 gap-8 mb-16">
           {projects.map((project, index) => (
             <div 
               key={index}
@@ -229,10 +243,20 @@ const Projects = () => {
                     </ul>
                   </div>
 
-                  {/* Action Button */}
-                  <div className="pt-4">
+                  {/* Action Buttons */}
+                  <div className="pt-4 space-y-3">
+                    {selectedProject.link && (
+                      <Button 
+                        className="w-full bg-gradient-primary hover:opacity-90"
+                        onClick={() => window.open(selectedProject.link, '_blank')}
+                      >
+                        <ExternalLink className="h-4 w-4 mr-2" />
+                        View Live Project
+                      </Button>
+                    )}
                     <Button 
-                      className="w-full bg-gradient-primary hover:opacity-90"
+                      variant="outline"
+                      className="w-full"
                       onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
                     >
                       Get Similar Solution
