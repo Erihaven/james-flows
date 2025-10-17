@@ -8,7 +8,7 @@ const Projects = () => {
   const projects = [
     {
       title: "RAG Supabase AI Agent",
-      description: "Built comprehensive RAG (Retrieval-Augmented Generation) AI agent workflow using Supabase vector search, OpenAI embeddings, and automated chat processing pipeline.",
+      description: "Built comprehensive RAG (Retrieval-Augmented Generation) AI agent workflow using Supabase vector search, OpenAI embeddings to retrieve specific information before generating answers, preventing hallucinations.",
       technologies: ["Supabase", "OpenAI API", "Vector Search", "RAG Pipeline"],
       outcomes: [
         "90% reduction in manual data processing",
@@ -20,8 +20,8 @@ const Projects = () => {
       image: "/src/assets/chat-agent-supabase.png"
     },
     {
-      title: "Multi-CRM Sync Hub",
-      description: "Real-time data synchronization between GoHighLevel, HubSpot, and Google Sheets through n8n, ensuring zero duplicate or stale data.",
+      title: "Google Drive to Supabase RAG pipeline",
+      description: "Automated a pipeline where documents uploaded to Google Drive are automatically processed and fed into Supabase for my RAG agent's knowledge base. This ensures the AI always has access to the most current files when answering user questions.",
       technologies: ["n8n", "HubSpot API", "GoHighLevel", "Google Sheets"],
       outcomes: [
         "100% data consistency",
@@ -33,8 +33,8 @@ const Projects = () => {
       image: "/src/assets/gdrive-to-supabase.png"
     },
     {
-      title: "Smart Email Campaign",
-      description: "AI-powered email automation with dynamic personalization using lead scraping, enrichment, and personalized outreach workflows.",
+      title: "Automatic Reschedule Workflow",
+      description: "Automatic booking re-schedulement system where user-submitted forms update the Supabase database in real-time. This instantly frees up the old time slot and makes the newly selected one unavailable on the public booking page.",
       technologies: ["n8n", "OpenAI API", "Email APIs", "Lead Enrichment"],
       outcomes: [
         "300% increase in response rates",
@@ -46,8 +46,8 @@ const Projects = () => {
       image: "/src/assets/booking-reschedule-automation.png"
     },
     {
-      title: "LogHorizon Condo Booking",
-      description: "Full-featured condo rental booking platform with automated booking management, rescheduling system, and Google Drive integration for seamless operations.",
+      title: "GHL LogHorizon Condo Booking",
+      description: "Full-featured condo rental booking platform with automated booking management and rescheduling system for seamless operations.",
       technologies: ["n8n Workflows", "Booking Automation", "Google Drive API", "Supabase"],
       outcomes: [
         "Automated booking confirmations",
