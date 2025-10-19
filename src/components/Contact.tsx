@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import emailjs from "@emailjs/browser";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -8,7 +9,8 @@ import { useToast } from "@/hooks/use-toast";
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  
+  const formRef = useRef<HTMLFormElement>(null);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -18,17 +20,34 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formRef.current) return;
+
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
+
+    try {
+      const result = await emailjs.sendForm(
+        "service_tn5kg3d",    // ← replace with your EmailJS service ID
+        "template_qm0jwza",   // ← replace with your EmailJS template ID
+        formRef.current,
+        "KbJBx9UGAI0YzVpZp"     // ← replace with your EmailJS public key
+      );
+
+      console.log("EmailJS success:", result.text);
       toast({
-        title: "Message sent successfully!",
+        title: "✅ Message sent successfully!",
         description: "I'll get back to you within 24 hours.",
       });
       setFormData({ name: "", email: "", company: "", message: "" });
+    } catch (error) {
+      console.error("EmailJS error:", error);
+      toast({
+        title: "❌ Message failed to send.",
+        description: "Please try again or contact me directly.",
+        variant: "destructive",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -154,7 +173,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="bg-card p-8 rounded-xl shadow-card border border-border/50">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold text-foreground mb-2">
@@ -167,11 +186,10 @@ const Contact = () => {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full"
                     placeholder="Your full name"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="email" className="block text-sm font-semibold text-foreground mb-2">
                     Email *
@@ -183,7 +201,6 @@ const Contact = () => {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full"
                     placeholder="your@email.com"
                   />
                 </div>
@@ -199,7 +216,6 @@ const Contact = () => {
                   type="text"
                   value={formData.company}
                   onChange={handleChange}
-                  className="w-full"
                   placeholder="Your company name"
                 />
               </div>
@@ -214,14 +230,13 @@ const Contact = () => {
                   required
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full min-h-[120px] resize-none"
-                  placeholder="Tell me about your automation needs, current challenges, and project goals..."
+                  placeholder="Tell me about your automation needs..."
                 />
               </div>
 
-              <Button 
-                type="submit" 
-                size="lg" 
+              <Button
+                type="submit"
+                size="lg"
                 disabled={isSubmitting}
                 className="w-full bg-gradient-primary hover:opacity-90 transition-all duration-300 transform hover:scale-105"
               >
