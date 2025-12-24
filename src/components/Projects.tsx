@@ -17,7 +17,7 @@ const Projects = () => {
       ],
       icon: <Bot className="h-6 w-6" />,
       category: "AI Automation",
-      image: "/src/assets/chat-agent-supabase.png"
+      image: "/chat-agent-supabase.png"
     },
     {
       title: "Google Drive to Supabase RAG pipeline",
@@ -30,7 +30,7 @@ const Projects = () => {
       ],
       icon: <Database className="h-6 w-6" />,
       category: "Data Integration",
-      image: "/src/assets/gdrive-to-supabase.png"
+      image: "/gdrive-to-supabase.png"
     },
     {
       title: "Automatic Reschedule Workflow",
@@ -43,7 +43,7 @@ const Projects = () => {
       ],
       icon: <Zap className="h-6 w-6" />,
       category: "Marketing Automation",
-      image: "/src/assets/booking-reschedule-automation.png"
+      image: "/booking-reschedule-automation.png"
     },
     {
       title: "GHL LogHorizon Condo Booking",
@@ -56,7 +56,7 @@ const Projects = () => {
       ],
       icon: <Calendar className="h-6 w-6" />,
       category: "Booking Platform",
-      image: "/src/assets/loghorizon-booking.png",
+      image: "/loghorizon-booking.png",
       link: "https://ghl.jeshub.site/loghorizon"
     }
   ];
